@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Responsive Catalog</title>
+<style>
+body{font-family:Arial;margin:20px;background:#f7f7f7;}
+h1{text-align:center;margin-bottom:16px;}
+#searchBox{width:50%;max-width:400px;padding:8px;margin:0 auto 20px;display:block;font-size:14px;}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;}
+.card{background:#fff;border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);transition:transform 0.2s;}
+.card:hover{transform:scale(1.03);}
+.imgwrap{width:100%;aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;}
+.imgwrap img{width:100%;height:100%;object-fit:contain;background:#fff;display:block;cursor:pointer;}
+.missing{color:#666;font-size:12px;padding:16px;text-align:center;}
+.meta{padding:10px 12px 14px 12px;border-top:1px solid #eee;}
+.meta div{margin:2px 0;font-size:13px;line-height:1.3;word-wrap:break-word;}
+.highlight{background:yellow;}
+.selectBox{margin:5px;}
+.remarkBox{width:95%;margin:4px auto 8px auto;padding:4px;border:1px solid #007bff;border-radius:4px;}
+.btn{padding:8px 12px;margin:4px;cursor:pointer;border-radius:6px;border:none;background:#007bff;color:white;}
+</style></head><body>
+<h1>Responsive Catalog</h1>
+<input type='text' id='searchBox' onkeyup='filterCards()' placeholder='Search products...'/>
+<div style='text-align:center;margin-bottom:16px;'>
+<button class='btn' onclick='showSelected()'>Show Selected</button>
+<button class='btn' onclick='showAll()'>Show All</button>
+<button class='btn' onclick='exportSelected()'>Export Selected to Excel</button>
+</div>
+<div class='grid' id='catalogGrid'>
+<div class='card' data-text=' DM 3D MRB-0041    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-18227058_0_260.jpg' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0041</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0043    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20571716_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0043</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0046    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20158629_0_260.jpg' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0046</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0064-E    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20571716_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0064-E</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0064    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-18227058_0_260.jpg' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0064</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0074-F    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20604388_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0074-F</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0081-F    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20604388_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0081-F</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0085-F    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20604388_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0085-F</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0093-E    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20604388_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0093-E</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0098-F    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-18227058_0_260.jpg' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0098-F</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0124-B    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20571716_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0124-B</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0146    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20158629_0_260.jpg' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0146</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D MRB-0160    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-20571716_0_260.jpg?pristine=true' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D MRB-0160</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+<div class='card' data-text=' DM 3D PH-0014    '>
+<div style='text-align:right;'><input type='checkbox' class='selectBox'></div>
+<div class='imgwrap'>
+<img src='https://www.zales.com/productimages/processed/V-18227058_0_260.jpg' onclick='window.open(this.src)'>
+</div>
+<div class='meta'>
+<div>DM 3D PH-0014</div>
+</div>
+<textarea class='remarkBox' placeholder='Enter remark for this product...'></textarea>
+</div>
+</div>
+<script>
+function filterCards() {
+var input=document.getElementById('searchBox').value.toLowerCase();
+var cards=document.getElementsByClassName('card');
+for(var i=0;i<cards.length;i++){
+var text=cards[i].getAttribute('data-text').toLowerCase();
+cards[i].style.display=text.indexOf(input)>-1?'':'none';}
+}
+function showSelected() {
+var cards=document.getElementsByClassName('card');
+for(var i=0;i<cards.length;i++){
+if(cards[i].getElementsByClassName('selectBox')[0].checked){cards[i].style.display='';}else{cards[i].style.display='none';}}
+}
+function showAll() {
+var cards=document.getElementsByClassName('card');
+for(var i=0;i<cards.length;i++){cards[i].style.display='';}
+}
+function exportSelected() {
+var cards=document.getElementsByClassName('card');
+var csv='';
+for(var i=0;i<cards.length;i++){
+if(cards[i].getElementsByClassName('selectBox')[0].checked){
+var fields=cards[i].getElementsByClassName('meta')[0].children;
+var row='';
+for(var j=0;j<fields.length;j++){row+=fields[j].textContent+',';}
+var remark=cards[i].getElementsByClassName('remarkBox')[0].value;
+row+=remark;
+csv+=row+'\n';}}
+var blob=new Blob([csv],{type:'text/csv'});
+var link=document.createElement('a');link.href=URL.createObjectURL(blob);
+link.download='SelectedCatalog.csv';link.click();
+}
+</script>
+
+</body></html>
